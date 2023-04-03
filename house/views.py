@@ -18,6 +18,10 @@ def projectsPage(request):
     return render(request, 'house/projects.html', context=context)
 
 
+def calculator(request):
+    return HttpResponse('<h1> There will be calculator</h1>')
+
+
 # HANDLE ERRORS
 def error400(request, exception):
     return HttpResponseNotFound('<h1>Page not found 400</h1>')

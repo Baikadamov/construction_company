@@ -4,27 +4,190 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.container {
+    padding-right: 65px;
+    padding-left: 65px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.mgn {
+    margin-top: 80px;
+}
+
+.card {
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.rounded-circle {
+    width: 200px;
+}
+
+.nav-item {
+    font-size: 14px;
+}
+
 .body {
     margin: 0;
 }
 
 .main {
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    top: 52%;
+    color: #FFFFFF;
+}
+
+.title h1 {
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.srok {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: #6CAC3D;
+    color: #FFFFFF;
+}
+
+.btn-about{
+    width: 150px;
+    height: 40px;
+}
+
+.btn-calc {
+    padding-top: 15px;
+    background-color: #6CAC3D;
+    color: #FFFFFF;
+    width: 260px;
+    height: 55px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-calc:hover {
+    color: #FFFFFF;
+    transform: scale(1.05);
+}
+
+.callback {
+    background: #6CAC3D;
+    color: #FFFFFF;
+    height: max-content;
+    font-size: 14px;
+    width: 180px;
+    font-weight: bold;
+    transition: all 0.3s;
+    padding: 8px;
+}
+
+.callback:hover {
+    color: #FFFFFF;
+    transform: scale(1.05);
 }
 
 .navbar-brand {
     font-weight: 700;
-    font-size: 40px;
+    font-size: 24px;
     color: #FFFFFF;
 }
 
 .main-image {
-
     width: 100%;
 }
 
+.house-card {
+    transition: all 0.3s;
+}
+
+.house-card:hover {
+    transform: scale(1.05);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #FFFFFF;
+}
+
+.navbar-dark .nav-item:hover .nav-link {
+    color: #6CAC3D;
+}
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .title h1 {
+        font-size: 35px;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+
+    .price {
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+    }
+
+    .srok {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .btn-calc {
+        background-color: #6CAC3D;
+        color: #FFFFFF;
+        width: 200px;
+        height: 30px;
+        font-weight: bold;
+        font-size: 12px;
+    }
 }
 
 @media only screen and (max-width: 767px) {
+    .title h1 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+
+    .price {
+        font-size: 9px;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+    }
+
+    .srok {
+        font-size: 6px;
+        font-weight: bold;
+        margin-bottom: 2px;
+    }
+
+    .btn-calc {
+        background-color: #6CAC3D;
+        color: #FFFFFF;
+        width: 120px;
+        height: 20px;
+        font-weight: bold;
+        font-size: 6px;
+    }
 }

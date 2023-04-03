@@ -43,3 +43,5 @@ class Type(models.Model):
         verbose_name = 'Типы книг'
         verbose_name_plural = 'Список типов'
         ordering = ['name']
+
+

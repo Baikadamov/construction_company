@@ -5,8 +5,299 @@
 
 <div class="main">
     <img class="main-image" src="{%static 'house/images/new-main.jpg' %}" alt="">
-</div>
- <div class="container">
-<h1>PROJECTS</h1>
+    <div class="container">
+        <div class="title">
+            <h1>Дом мечты</h1>
+            <p class="price">от 9000 тг кв/м</p>
+            <p class="srok">в точные сроки по договору</p>
+            <a href="{% url 'calculator' %}" class="btn btn-calc">Рассчитать стоимость</a>
+        </div>
     </div>
+</div>
+
+<div class="container mgn  mb-5">
+    <h3 class="text-center mt-3 mb-5"><strong> Примеры наших работ</strong></h3>
+    <div class="row mb-5">
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card house-card">
+                <img src="{%static 'house/images/2.jpg' %}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        smt
+                    </h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolore
+                        doloremque
+                        eos est, expedita iure, laborum minus non obcaecati perferendis porro quam, quidem ratione
+                        reiciendis repellendus tempora tempore vel velit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card house-card">
+                <img src="{%static 'house/images/4.jpg' %}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        smt
+                    </h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolore
+                        doloremque
+                        eos est, expedita iure, laborum minus non obcaecati perferendis porro quam, quidem ratione
+                        reiciendis repellendus tempora tempore vel velit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card house-card">
+                <img src="{%static 'house/images/3.jpg' %}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        smt
+                    </h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolore
+                        doloremque
+                        eos est, expedita iure, laborum minus non obcaecati perferendis porro quam, quidem ratione
+                        reiciendis repellendus tempora tempore vel velit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mgn ">
+    <h3 class="text-center mt-5 mb-5"><strong>Наши Приемущества</strong></h3>
+    <div class="row">
+        <div class="col-sm-6  col-md-4 col-lg-3">
+            <img src="{%static 'house/images/first.svg' %}" alt="">
+            <p class="card-title mt-2" style="font-size: 20px"><b>Работа без предоплаты </b></p>
+            <p class="text"> Мы не берём предоплату. Вы платите за каждый этап работ после подписания акта.</p>
+        </div>
+        <div class="col-sm-6  col-md-4 col-lg-3">
+            <img src="{%static 'house/images/second.svg' %}" alt="">
+            <p class="card-title mt-2 " style="font-size: 20px"><b> Стоимость ремонта не меняется </b></p>
+            <p class="text"> Прозрачный бюджет. Финальная смета фиксируется в согласованных актах.</p>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <img src="{%static 'house/images/fourth.svg' %}" alt="">
+            <p class="card-title mt-2" style="font-size: 20px"><b>Мастера с опытом от 5 лет </b></p>
+            <p class="text">Мастера В штате 250 мастеров с опытом работы от 5 лет, 20 прорабов с опытом от 8 лет</p>
+        </div>
+        <div class="col-sm-6  col-md-4 col-lg-3">
+            <img src="{%static 'house/images/third.svg' %}" alt="">
+            <p class="card-title mt-2" style="font-size: 20px"><b> За нами не переделывают </b></p>
+            <p class="text"> Качество работ для нас в приоритете. Даём гарантию на все виды работ.</p>
+        </div>
+    </div>
+</div>
+
+<div id="team" class="container mgn mb-5">
+    <h3 class="text-center mt-5 mb-5"><strong>Наша команда</strong></h3>
+    <div class="row mb-5">
+        <div class="col-sm-6  col-md-4 col-lg-3">
+            <div class="card">
+                <div class="flex">
+                    <div>
+                        <img src="{%static 'house/images/naruto.jpg' %}" class=" rounded-circle" width="100" alt="">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-title text-center mt-2" style="font-size: 20px"><b>Naruto Uzumaki</b></p>
+                    <p class="text-center ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis deserunt
+                        doloribus, enim exercitationem ipsum nobis omnis quam quas qui </p>
+                    <div class="flex">
+                        <button class="btn btn-about">
+                            Подробнее
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6  col-md-4 col-lg-3">
+            <div class="card">
+                <div class="flex">
+                    <div>
+                        <img src="{%static 'house/images/naruto.jpg' %}" class=" rounded-circle" width="100" alt="">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-title text-center mt-2" style="font-size: 20px"><b>Naruto Uzumaki</b></p>
+                    <p class="text-center ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis deserunt
+                        doloribus, enim exercitationem ipsum nobis omnis quam quas qui </p>
+                    <div class="flex">
+                        <button class="btn btn-about">
+                            Подробнее
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6  col-md-4 col-lg-3">
+            <div class="card">
+                <div class="flex">
+                    <div>
+                        <img src="{%static 'house/images/naruto.jpg' %}" class=" rounded-circle" width="100" alt="">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-title text-center mt-2" style="font-size: 20px"><b>Naruto Uzumaki</b></p>
+                    <p class="text-center ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis deserunt
+                        doloribus, enim exercitationem ipsum nobis omnis quam quas qui </p>
+                    <div class="flex">
+                        <button class="btn btn-about">
+                            Подробнее
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6  col-md-4 col-lg-3">
+            <div class="card">
+                <div class="flex">
+                    <div>
+                        <img src="{%static 'house/images/naruto.jpg' %}" class=" rounded-circle" width="100" alt="">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-title text-center mt-2" style="font-size: 20px"><b>Naruto Uzumaki</b></p>
+                    <p class="text-center ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis deserunt
+                        doloribus, enim exercitationem ipsum nobis omnis quam quas qui </p>
+                    <div class="flex">
+                        <button class="btn btn-about">
+                            Подробнее
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mgn mb-5">
+    <h3 class="text-center"><strong>Свой склад и шоурум материалов наших партнеров в Алматы </strong></h3>
+    <div class="row">
+        <div class="col-md-4 col-lg col-sm-6">
+            <div class="mt-4">
+                <img src="{%static 'house/images/showroom1.svg'%}" alt="">
+                <div class="mt-3">
+                    <p><b>Прямой договор с поставщиками</b></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg col-sm-6">
+            <div class="mt-4">
+                <img src="{%static 'house/images/showroom2.svg'%}" alt="">
+                <div class="mt-3">
+                    <p><b>Еженедельный отчет о работе</b></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 col-lg col-sm-6">
+            <div class="mt-4">
+                <img src="{%static 'house/images/showroom3.svg'%}" alt="">
+                <div class="mt-3">
+                    <p><b>1300 тонн черновых и чистовых материалов</b></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 col-lg col-sm-6">
+            <div class="mt-4">
+                <img src="{%static 'house/images/showroom4.svg'%}" alt="">
+                <div class="mt-3">
+                    <p><b>250 видов керамики
+                        25 видов ламината
+                        50 видов плитки</b></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg col-sm-6">
+            <div class="mt-4">
+                <img src="{%static 'house/images/showroom5.svg'%}" alt="">
+                <div class="mt-3">
+                    <p><b>Выезд специалиста с каталогом материалов</b></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6 mt-2">
+            <img src="{%static 'house/images/showroom01.svg'%}" width="100%" alt="">
+        </div>
+        <div class="col-12 col-md-6 mt-2 ">
+            <img src="{%static 'house/images/showroom02.svg'%}" width="100%" alt="">
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <p>
+        Мы предлагаем широкий спектр услуг по ремонту и строительству, включая дизайн интерьеров, строительство домов и
+        квартир, ремонт квартир и офисов, а также другие виды работ. </p>
+    <p>
+        Мы стремимся к качеству во всем, начиная от выбора лучших материалов и заканчивая профессиональным подходом к
+        каждому проекту. Наша команда состоит из высококвалифицированных <a href="#team" class="link-success"><b>специалистов</b></a>
+        , которые готовы воплотить ваши
+        идеи в жизнь.
+    </p>
+    <p>
+        Мы ценим доверие наших клиентов и гарантируем высокое качество выполненных работ в срок. Свяжитесь с нами, чтобы
+        обсудить ваш проект и получить <b>бесплатную </b> консультацию от нашей команды профессионалов.
+    </p>
+</div>
+
+
+<footer class="bg-dark text-center text-white mgn  ">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+        <!-- Section: Form -->
+        <section class="">
+            <form action="">
+                <!--Grid row-->
+                <div class="row d-flex justify-content-center">
+                    <!--Grid column-->
+                    <div class="col-auto">
+                        <p class="pt-2">
+                            <strong>Подписаться на новости</strong>
+                        </p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-5 col-12">
+                        <div class="form-outline form-white mb-4">
+                            <input type="email" id="form5Example29" placeholder="Введите свой email"
+                                   class="form-control"/>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-auto">
+                        <!-- Submit button -->
+                        <button type="submit" class="btn   mb-4">
+                            Подписаться
+                        </button>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </form>
+        </section>
+        <!-- Section: Form -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Все права защищены:
+        <a class="text-white" href="https://mdbootstrap.com/">Baikadamov</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+
+
 {%endblock%}

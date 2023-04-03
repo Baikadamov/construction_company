@@ -16,7 +16,7 @@
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
     <div class="container">
-        <a class="navbar-brand" href="#">Build<span style="color: #6CAC3D">House</span> </a>
+        <a class="navbar-brand"   href="#">Build<span style="color: #6CAC3D">House</span> </a>
         <button
                 class="navbar-toggler"
                 type="button"
@@ -25,25 +25,26 @@
                 aria-controls="navbarNav"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
+                onclick="shadow()"
         >
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav me-auto ">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Цены</a>
+                    <a class="nav-link " href="#">Цены</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Услуги</a>
+                    <a class="nav-link " href="#">Услуги</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Портфолио</a>
+                    <a class="nav-link " href="{% url 'projectsPage' %}">Портфолио</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Блог</a>
+                    <a class="nav-link " href="#">Блог</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Контакты</a>
+                    <a class="nav-link " href="#">Контакты</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto ">
@@ -52,7 +53,7 @@
                     <a class="nav-link text-white " style="padding: 0 10px" href="#">С 10:00 до 21:00</a>
                 </li>
                 <li class="nav-item ">
-                    <button class="btn nav-link  " style="background: #6CAC3D ; color: #FFFFFF ; height: 50px ; font-size: 14px ; width: 180px;font-weight: bold " href="#">Вам перезвонить?</button>
+                    <button class="btn   callback "  href="#">Вам перезвонить?</button>
                 </li>
             </ul>
         </div>
