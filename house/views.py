@@ -11,11 +11,20 @@ def index(request):
 
 
 def projectsPage(request):
-    project = Project.objects.all()
+    projects = Project.objects.all()
     context = {
-        'project': project,
+        'projects': projects,
     }
     return render(request, 'house/projects.html', context=context)
+
+
+def project(request, pk):
+    project = Project.objects.get(id=pk)
+    print(project)
+    context = {
+        'project': project
+    }
+    return render(request, 'house/project.html', context=context)
 
 
 def calculator(request):

@@ -14,9 +14,9 @@
 </head>
 <body>
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+<nav class="navbar fixed-top navbar-expand-lg bg-dark navbar-dark p-md-3">
     <div class="container">
-        <a class="navbar-brand"   href="#">Build<span style="color: #6CAC3D">House</span> </a>
+        <a class="navbar-brand" href="{% url 'home' %}">Build<span style="color: #6CAC3D">House</span> </a>
         <button
                 class="navbar-toggler"
                 type="button"
@@ -25,7 +25,6 @@
                 aria-controls="navbarNav"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
-                onclick="shadow()"
         >
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -59,6 +58,7 @@
         </div>
     </div>
 </nav>
+
 {% block content%}
 
 {% endblock%}

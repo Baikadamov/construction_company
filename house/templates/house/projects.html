@@ -1,13 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{%extends 'house/base.html'%}
+{%load static%}
 
-{% for p in project%}
-    <h1>{{p.name}}</h1>
-{%endfor%}
-</body>
-</html>
+
+{%block content%}
+
+<div class="container p-5 mgn">
+
+    <section class="  text-center   mb-5">
+        <div class="row py-lg-3 ">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Проекты</h1>
+                <p class="lead text-muted"> Мы стремимся создавать дома, которые отражают
+                    индивидуальность и потребности каждого нашего клиента.. Каждый проект, который мы предлагаем, создан
+                    с учетом эстетики, комфорта и удобства.</p>
+                <p>
+                    <a href="#" class="btn  my-2">Ремонт</a>
+                    <a href="#" class="btn  my-2">Новые</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <div class="row g-3">
+        {% for p in projects%}
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100">
+                <img src="{{p.photo_1.url}}" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-text">{{p.name}}</h4>
+                    <p class="card-text"> {{p.description|truncatewords:8}}</p>
+                    <p class="card-text">Тип : {{p.type}}</p>
+                    <p class="card-text">Цена : {{p.price}} Тг</p>
+                    <a href="{% url 'project' p.pk %}" class="btn  ">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+
+{% endblock %}
