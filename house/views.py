@@ -27,8 +27,15 @@ def project(request, pk):
     return render(request, 'house/project.html', context=context)
 
 
+def contacts(request   ):
+    return render(request, 'house/contacts.html', )
+
+
 def calculator(request):
-    return HttpResponse('<h1> There will be calculator</h1>')
+    context = {
+
+    }
+    return render(request, 'house/calculator.html', context=context)
 
 
 # HANDLE ERRORS

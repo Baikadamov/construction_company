@@ -8,30 +8,8 @@
 <section id="about" class="about section-padding">
     <div class="container p-5 mgn">
         <div class="row">
-            <div class="col-lg-6 col-md-12 col-12  ">
-                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="3000">
-                            <img src="{{project.photo_1.url}}" alt="" class="img-fluid rounded h-100">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="3000">
-                            <img src="{{project.photo_2.url}}" alt="" class="img-fluid rounded h-100">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{project.photo_3.url}}" alt="" class="img-fluid rounded ">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                            data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Предыдущий</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                            data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Следующий</span>
-                    </button>
-                </div>
+            <div class="col-lg-6 col-md-12 col-12   ">
+                 <img src="{{project.photo_1.url}}"   width="600" alt="">
             </div>
             <div class="col-lg-6 col-md-12 col-12  ">
                 <div class="about-text mt-2">
@@ -53,22 +31,34 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-6 col-md-12 col-12">
-            <h5>Информация</h5>
+            <h5>Характеристики:</h5>
             <table class="table ">
                 <thead class=" bg-dark text-white">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
+                    <th scope="col">{{project.type2}}</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
+                    <th scope="row">Высота</th>
+                    <td>{{project.height}}</td>
                 </tr>
                 <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
+                    <th scope="row">ceiling_height</th>
+                    <td>{{project.ceiling_height}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">dimensions</th>
+                    <td>{{project.dimensions}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">roof</th>
+                    <td>{{project.roof}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">area</th>
+                    <td>{{project.area}}</td>
                 </tr>
                 </tbody>
             </table>
@@ -79,23 +69,34 @@
                 <thead class=" bg-secondary text-white">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
+                    <th scope="col">{{project.e}}</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
+                    <th scope="row">Крыша</th>
+                    <td>Черепица</td>
                 </tr>
                 <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
+                    <th scope="row">Стены</th>
+                    <td>Sip</td>
                 </tr>
                 </tbody>
             </table>
         </div>
-
     </div>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <h5 class="text-center">Строительный чертеж</h5>
+        <div class="col">
+            <img src="{{project.photo_2.url}}" width="500" alt="">
+        </div>
+        <div class="col">
+            <img src="{{project.photo_3.url}}"    width="500" alt="">
+        </div>
+    </div>
+
 </div>
 
 <div class="container mt-5">

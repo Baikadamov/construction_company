@@ -5,22 +5,81 @@
 {%block content%}
 
 <div class="container p-5 mgn">
-
-    <section class="  text-center   mb-5">
+    <section class="      mb-5">
         <div class="row py-lg-3 ">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">Проекты</h1>
+            <div class="col-lg-8 col-md-6 me-auto">
+                <h2 class="fw-light">Проекты и цены на строительство домов</h2>
                 <p class="lead text-muted"> Мы стремимся создавать дома, которые отражают
                     индивидуальность и потребности каждого нашего клиента.. Каждый проект, который мы предлагаем, создан
                     с учетом эстетики, комфорта и удобства.</p>
-                <p>
-                    <a href="#" class="btn  my-2">Ремонт</a>
-                    <a href="#" class="btn  my-2">Новые</a>
-                </p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <span class="text-black" style="font-size: 25px;font-weight: bold">Build<span style="color: #6CAC3D">House</span></span>
             </div>
         </div>
+
     </section>
+
     <div class="row g-3">
+        <div class="mb-2 d-flex justify-content-start">
+            <div class="me-2">
+                <input type="text" class="form-control" style="width: 400px" placeholder="Найти..">
+            </div>
+            <div>
+                <button class="btn"> Поиск</button>
+            </div>
+
+            <div class="ms-auto d-flex">
+                <!--                <p class="py-2 m-0"  >-->
+                <!--                    FILTER-->
+                <!--                </p>-->
+                <div class="dropdown mx-2">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton01"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        Кровля
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton01">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown mx-2">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton0"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        Этаж
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton0">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown mx-2">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        Цена
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown ">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        Тип
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
         {% for p in projects%}
         <div class="col-12 col-md-6 col-lg-4">
             <div class="card h-100">

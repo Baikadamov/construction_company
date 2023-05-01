@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav me-auto ">
                 <li class="nav-item">
-                    <a class="nav-link " href="#">Цены</a>
+                    <a class="nav-link " href="{% url 'calculator' %}">Цены</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="#">Услуги</a>
@@ -43,7 +43,7 @@
                     <a class="nav-link " href="#">Блог</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#">Контакты</a>
+                    <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto ">
@@ -62,6 +62,62 @@
 {% block content%}
 
 {% endblock%}
+
+
+
+
+<footer class="bg-dark text-center text-white mgn  ">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+        <!-- Section: Form -->
+        <section class="">
+            <form action="">
+                <!--Grid row-->
+                <div class="row d-flex justify-content-center">
+                    <!--Grid column-->
+                    <div class="col-auto">
+                        <p class="pt-2">
+                            <strong>Подписаться на новости</strong>
+                        </p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-5 col-12">
+                        <div class="form-outline form-white mb-4">
+                            <input type="email" id="form5Example29" placeholder="Введите свой email"
+                                   class="form-control"/>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-auto">
+                        <!-- Submit button -->
+                        <button type="submit" class="btn   mb-4">
+                            Подписаться
+                        </button>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </form>
+        </section>
+        <!-- Section: Form -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Все права защищены:
+        <a class="text-white" href="https://mdbootstrap.com/">Baikadamov</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+
+
+
+
 
 <script src="{% static 'house/js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'house/js/script.js' %}"></script>
