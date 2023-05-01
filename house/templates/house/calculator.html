@@ -1,0 +1,143 @@
+{%extends 'house/base.html'%}
+{%load static%}
+
+
+{%block content%}
+<div class="container mgn">
+    <div class="row g-3 ">
+        <div class="col-8 mx-auto">
+            <h5 class="  mt-5 ">Калькулятор в разработке ((((( </h5>
+            <div class=" ">
+                <p class="fw-bold">Калькулятор расчета стоимости дома</p>
+                <form action="">
+                    <div class="mb-3 row">
+                        <label  class="col-sm-4 col-form-label">Количество этажей</label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option selected>1</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label  class="col-sm-4 col-form-label">Длина строения</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" placeholder="8.6">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label  class="col-sm-4 col-form-label">Ширина строения	</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" placeholder="8.6">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label  class="col-sm-4 col-form-label">Высота 1 этажа</label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option selected>1</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label  class="col-sm-4 col-form-label">Общая длина внутренних стен 1 этажа	</label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option selected>1</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label   class="col-sm-4 col-form-label">Толщина наружных стен
+                        </label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option selected>120</option>
+                                <option>124</option>
+                                <option>170</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label  class="col-sm-4 col-form-label">Толщина внутренних стен
+
+                        </label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option selected>120</option>
+                                <option>124</option>
+                                <option>170</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label  class="col-sm-4 col-form-label">Толщина чердачного перекрытия
+
+                        </label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option selected>120</option>
+                                <option>124</option>
+                                <option>170</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label  class="col-sm-4 col-form-label">Монтаж
+
+                        </label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option selected>Без монтажа</option>
+                                <option>124</option>
+                                <option>170</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label  class="col-sm-4 col-form-label">Фундамент
+                        </label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option selected>Без Фундамента</option>
+                                <option>124</option>
+                                <option>170</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label  class="col-sm-4 col-form-label">Окна
+                        </label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option selected>Без окон</option>
+                                <option>124</option>
+                                <option>170</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label  class="col-sm-4 col-form-label">Кровля
+                        </label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option selected>Без кровельного покрытия</option>
+                                <option>124</option>
+                                <option>170</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-3  d-flex">
+                        <button class="btn ms-auto">
+                            Рассчитать
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
