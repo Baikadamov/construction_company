@@ -6,3 +6,6 @@ from house.models import *
 
 admin.site.register(Project)
 admin.site.register(Type)
+admin.site.register(Profile)
+admin.site.register(Order)
+admin.site.register(Status)

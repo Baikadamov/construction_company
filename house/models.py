@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 
@@ -51,3 +52,35 @@ class Type(models.Model):
         ordering = ['name']
 
 
+class Profile(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    id_user = models.IntegerField()
+    contacts = models.TextField(blank=True)
+    number = models.TextField(blank=True)
+    location = models.CharField(max_length=100, blank=True)
+
+    def __str__(self):
+        return self.user.username
+
+
+class Status(models.Model):
+    name = models.CharField(max_length=200, help_text="Enter a status")
+
+    def __str__(self):
+        return self.name
+
+
+
+class Order(models.Model):
+    user = models.CharField(max_length=100)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    status = models.ForeignKey(Status, on_delete=models.CASCADE)
+    file = models.FileField(upload_to='files')
+    file1 = models.FileField(upload_to='files')
+    file2 = models.FileField(upload_to='files')
+    file3 = models.FileField(upload_to='files')
+    file4 = models.FileField(upload_to='files')
+    file5 = models.FileField(upload_to='files')
+
+    def __str__(self):
+        return self.user

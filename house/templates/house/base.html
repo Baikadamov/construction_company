@@ -16,7 +16,7 @@
 
 <nav class="navbar fixed-top navbar-expand-lg bg-dark navbar-dark p-md-3">
     <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}">Build<span style="color: #6CAC3D">House</span> </a>
+        <a class="navbar-brand" href="{% url 'home' %}">North<span style="color: #6CAC3D">Construction</span> </a>
         <button
                 class="navbar-toggler"
                 type="button"
@@ -40,19 +40,43 @@
                     <a class="nav-link " href="{% url 'projectsPage' %}">Портфолио</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#">Блог</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
                 </li>
+                {% if request.user.is_authenticated and request.user.is_superuser %}
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="{% url 'moder' %}">Модерация</a>
+                </li>
+                {% endif %}
+                <li class="nav-item dropdown">
+                    {% if request.user.is_authenticated %}
+                    <a class="nav-link active dropdown-toggle" style="color: #6CAC3D" href="#" role="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        {{ request.user.username }}
+                    </a>
+                    {% else %}
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'signin' %}">Войти</a>
+                </li>
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'profile' request.user.pk %}">Профиль</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item text-danger" href="{% url 'logout' %}"> Logout</a></li>
+                </ul>
+                {% endif %}
             </ul>
             <ul class="navbar-nav ms-auto ">
-                <li class="nav-item" >
+                <li class="nav-item">
                     <a class="nav-link text-white " style="padding: 0 10px" href="#">+7 777 494 1956</a>
                     <a class="nav-link text-white " style="padding: 0 10px" href="#">С 10:00 до 21:00</a>
                 </li>
                 <li class="nav-item ">
-                    <button class="btn   callback "  href="#">Вам перезвонить?</button>
+                    <button class="btn   callback " href="#">Вам перезвонить?</button>
                 </li>
             </ul>
         </div>
@@ -62,8 +86,6 @@
 {% block content%}
 
 {% endblock%}
-
-
 
 
 <footer class="bg-dark text-center text-white mgn  ">
@@ -114,9 +136,6 @@
     </div>
     <!-- Copyright -->
 </footer>
-
-
-
 
 
 <script src="{% static 'house/js/bootstrap.bundle.min.js' %}"></script>

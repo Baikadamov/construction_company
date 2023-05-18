@@ -9,7 +9,7 @@
     <div class="container p-5 mgn">
         <div class="row">
             <div class="col-lg-6 col-md-12 col-12   ">
-                 <img src="{{project.photo_1.url}}"   width="600" alt="">
+                <img src="{{project.photo_1.url}}" width="600" alt="">
             </div>
             <div class="col-lg-6 col-md-12 col-12  ">
                 <div class="about-text mt-2">
@@ -18,9 +18,18 @@
                     <p><b> Тип: </b>{{project.type}}</p>
                     <p><b> Цена:</b> {{project.price}} тг</p>
                     <div class="mt-3">
-                        <button class="btn btn-lg btn-dark">
-                            Заказать
-                        </button>
+                        <form action="/order" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="project_id" value="{{project.id}}">
+                            <input type="hidden" value="{{project.description}}" name="caption">
+                            <button class="btn btn-lg btn-dark">
+                                Заказать
+                            </button>
+                        </form>
+                        {% for m in messages %}
+                        <p class="text-danger">{{m}}</p>
+                        {% endfor %}
+
                     </div>
                 </div>
             </div>
@@ -93,7 +102,7 @@
             <img src="{{project.photo_2.url}}" width="500" alt="">
         </div>
         <div class="col">
-            <img src="{{project.photo_3.url}}"    width="500" alt="">
+            <img src="{{project.photo_3.url}}" width="500" alt="">
         </div>
     </div>
 
