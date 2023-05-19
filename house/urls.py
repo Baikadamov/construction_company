@@ -14,6 +14,10 @@ urlpatterns = [
     path('order', order, name='order'),
     path('moder/', moder, name='moder'),
     path('updateorder', updateorder, name='updateorder'),
+    path('addnewproject', addnewproject, name='addnewproject'),
+    path('delete', delete, name='delete'),
+    path('deleteorder', deleteorder, name='deleteorder'),
+    path('updateproject', updateproject, name='updateproject'),
 
     path('signup/', signup, name='signup'),
     path('logout/', logout, name='logout'),

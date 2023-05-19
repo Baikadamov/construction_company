@@ -115,15 +115,110 @@ def moder(request):
     return render(request, 'house/moder.html', context=context)
 
 
+@login_required(login_url='signin')
+def delete(request):
+    if request.method == 'POST':
+        pk = request.POST['pk']
+        project = Project.objects.filter(id=pk)
+        project.delete()
+        return redirect('projectsPage')
+    return redirect('projectsPage')
+
+
+@login_required(login_url='signin')
+def deleteorder(request):
+    if request.method == 'POST':
+        pk = request.POST['pk']
+        order = Order.objects.filter(id=pk)
+        print(pk)
+        print(order)
+        order.delete()
+        return redirect(request.META['HTTP_REFERER'])
+    return redirect(request.META['HTTP_REFERER'])
+
+
+@login_required(login_url='signin')
+def updateproject(request):
+    if request.method == 'POST':
+        pk = request.POST['pk']
+        project = Project.objects.get(id=pk)
+        name = request.POST['name']
+        description = request.POST['description']
+        area = request.POST['area']
+        height = request.POST['height']
+        roof = request.POST['roof']
+        floors = request.POST['floors']
+        dimensions = request.POST['dimensions']
+        ceiling_height = request.POST['ceiling_height']
+        price = request.POST['price']
+        photo_1 = request.FILES['photo_1']
+        photo_2 = request.FILES['photo_2']
+        photo_3 = request.FILES['photo_3']
+
+        project.name = name
+        project.description = description
+        project.area = area
+        project.height = height
+        project.roof = roof
+        project.floors = floors
+        project.dimensions = dimensions
+        project.ceiling_height = ceiling_height
+        project.price = price
+        project.photo_1 = photo_1
+        project.photo_2 = photo_2
+        project.photo_3 = photo_3
+
+        project.save()
+        return redirect(request.META['HTTP_REFERER'], )
+    return redirect(request.META['HTTP_REFERER'], )
+
+
+def addnewproject(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        description = request.POST['description']
+        area = request.POST['area']
+        height = request.POST['height']
+        roof = request.POST['roof']
+        floors = request.POST['floors']
+        dimensions = request.POST['dimensions']
+        ceiling_height = request.POST['ceiling_height']
+        price = request.POST['price']
+        photo_1 = request.FILES['photo_1']
+        photo_2 = request.FILES['photo_2']
+        photo_3 = request.FILES['photo_3']
+
+        # Create a new Project instance
+        project = Project(
+            name=name,
+            slug=name,
+            description=description,
+            area=area,
+            height=height,
+            roof=roof,
+            floors=floors,
+            dimensions=dimensions,
+            ceiling_height=ceiling_height,
+            type_id=1,
+            price=price,
+            photo_1=photo_1,
+            photo_2=photo_2,
+            photo_3=photo_3
+        )
+        project.save()
+
+        # Redirect to the desired page after adding the project
+        return redirect('projectsPage')  # Replace 'project-list' with the actual URL or view name
+
+    return render(request, 'project/add.html')  # Replace 'project/add.html' with the actual template path
+
+
 def updateorder(request):
     if request.method == 'POST':
         pk = request.POST['pk']
         order = Order.objects.get(id=pk)
 
         if request.FILES.get('file') is None:
-            file = order.file
-            order.file = file
-
             status_id = request.POST['status']
             status = Status.objects.get(id=status_id)  # Retrieve the Status instance
             order.status = status  # Assign the Status instance to order.status
@@ -133,21 +228,11 @@ def updateorder(request):
             return redirect(request.META['HTTP_REFERER'])
         if request.FILES.get('file') is not None:
             file = request.FILES.get('file')
-            file1 = request.FILES.get('file1')
-            file2 = request.FILES.get('file2')
-            file3 = request.FILES.get('file3')
-            file4 = request.FILES.get('file4')
-            file5 = request.FILES.get('file5')
 
             status_id = request.POST['status']
             status = Status.objects.get(id=status_id)  # Retrieve the Status instance
 
             order.file = file
-            order.file1 = file1
-            order.file2 = file2
-            order.file3 = file3
-            order.file4 = file4
-            order.file5 = file5
             order.status = status  # Assign the Status instance to order.status
             order.save()
             messages.info(request, 'Изменения сохранены')
@@ -223,10 +308,55 @@ def contacts(request):
 
 
 def calculator(request):
-    context = {
+    projects = Project.objects.all()
+    if request.method == 'POST':
+        floor = request.POST['floor']
+        length = float(request.POST['length'])
+        width = float(request.POST['width'])
+        length1floor = float(request.POST['length1floor'])
+        width_of_wall = float(request.POST['width_of_wall'])
+        general_length = float(request.POST['general_length'])
+        width_of_inner_wall = float(request.POST['width_of_inner_wall'])
+        width_of_cherdak = float(request.POST['width_of_cherdak'])
+        montazh = request.POST['montazh']
+        fundament = request.POST['fundament']
+        window = request.POST['window']
+        krovlya = request.POST['krovlya']
 
-    }
-    return render(request, 'house/calculator.html', context=context)
+        area_out_wall = width_of_wall + 10
+        area_inner_wall = general_length * 3
+        total_area = length * width
+
+        # Calculate the approximate total price based on the area and selected options
+        price_per_sqm = 9120  # Example price per square meter
+        total_price = total_area * price_per_sqm
+
+        # Add the calculated values to the context dictionary
+        context = {
+            'floor': floor,
+            'length': length,
+            'width': width,
+            'length1floor': length1floor,
+            'total_area': total_area,
+            'width_of_wall': width_of_wall,
+            'general_length': general_length,
+            'width_of_inner_wall': width_of_inner_wall,
+            'width_of_cherdak': width_of_cherdak,
+            'montazh': montazh,
+            'fundament': fundament,
+            'window': window,
+            'krovlya': krovlya,
+            'area_out_wall': area_out_wall,
+            'area_inner_wall': area_inner_wall,
+            'total_price': total_price,
+            'projects': projects,
+
+        }
+
+        messages.info(request, 'Calculated')
+        return render(request, 'house/calculator.html', context=context)
+
+    return render(request, 'house/calculator.html', {'projects': projects})
 
 
 # HANDLE ERRORS

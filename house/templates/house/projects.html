@@ -32,13 +32,13 @@
 
                 </div>
                 <div>
-                    <button class="btn" type="sumbit"> Поиск</button>
+                    <button class="btn green" type="sumbit"> Поиск</button>
                 </div>
             </form>
 
             <div class="ms-auto d-flex">
                 <div class="dropdown mx-2">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton01"
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton01"
                             data-bs-toggle="dropdown" aria-expanded="false">
                         Кровля
                     </button>
@@ -49,7 +49,7 @@
                     </ul>
                 </div>
                 <div class="dropdown mx-2">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton0"
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton0"
                             data-bs-toggle="dropdown" aria-expanded="false">
                         Этаж
                     </button>
@@ -60,7 +60,7 @@
                     </ul>
                 </div>
                 <div class="dropdown mx-2">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                             data-bs-toggle="dropdown" aria-expanded="false">
                         Цена
                     </button>
@@ -71,7 +71,7 @@
                     </ul>
                 </div>
                 <div class="dropdown ">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2"
                             data-bs-toggle="dropdown" aria-expanded="false">
                         Тип
                     </button>
@@ -95,13 +95,13 @@
                     <p class="card-text">{{ p.description|truncatewords:8 }}</p>
                     <p class="card-text">Тип: {{ p.type }}</p>
                     <p class="card-text">Цена: {{ p.price }} Тг</p>
-                    <a href="{% url 'project' p.pk %}" class="btn">Подробнее</a>
+                    <a href="{% url 'project' p.pk %}" class="btn btn-dark">Подробнее</a>
                 </div>
             </div>
         </div>
         {% endfor %}
         {% else %}
-        <h4 class=" mt-5">Ничего не найдено
+        <h4 class=" mt-5 mb-5 pb-5">Ничего не найдено
             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                  height="16"
                  fill="currentColor" class="bi bi-emoji-frown"

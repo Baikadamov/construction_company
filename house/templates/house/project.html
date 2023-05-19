@@ -29,7 +29,102 @@
                         {% for m in messages %}
                         <p class="text-danger">{{m}}</p>
                         {% endfor %}
+                        <!-- Кнопка-триггер модального окна -->
+                        {% if request.user.is_authenticated and request.user.is_superuser %}
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                            Редактировать
+                        </button>
+                        {% endif %}
 
+                        <!-- Модальное окно -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog  modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Изменить проект
+                                            окна</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Закрыть"></button>
+                                    </div>
+                                    <form action="/updateproject" method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="modal-body">
+                                            <div class="mt-3">
+                                                <label for="name">Name:</label>
+                                                <input class="form-control" value="{{project.name}}" type="text" name="name" id="name" required>
+                                                <input class="form-control" value="{{project.pk}}" type="hidden" name="pk"   required>
+                                            </div>
+                                            <div class="mt-3">
+                                                <label for="description">Description:</label>
+                                                <textarea class="form-control"  name="description"
+                                                          id="description">{{project.description}}</textarea>
+                                            </div>
+                                            <div class="mt-3">
+                                                <label for="area">Area:</label>
+                                                <input class="form-control" value="{{project.area}}" name="area" id="area">
+                                            </div>
+                                            <div class="mt-3">
+                                                <label for="height">Height:</label>
+                                                <input class="form-control" value="{{project.area}}" name="height" id="height">
+                                            </div>
+                                            <div class="mt-3">
+                                                <label for="roof">Roof:</label>
+                                                <input class="form-control" value="{{project.area}}" name="roof" id="roof">
+                                            </div>
+                                            <div class="mt-3">
+                                                <label for="floors">Floors:</label>
+                                                <input class="form-control" value="{{project.area}}" name="floors" id="floors">
+                                            </div>
+                                            <div class="mt-3">
+                                                <label for="dimensions">Dimensions:</label>
+                                                <input class="form-control" value="{{project.dimensions}} " name="dimensions"
+                                                       id="dimensions">
+                                            </div>
+                                            <div class="mt-3">
+                                                <label for="ceiling_height">Ceiling Height:</label>
+                                                <input class="form-control" value="{{project.ceiling_height}}" name="ceiling_height"
+                                                       id="ceiling_height">
+                                            </div>
+                                            <div class="mt-3">
+                                                <label for="price">Price:</label>
+                                                <input class="form-control" value="{{project.price}}" type="number" name="price" id="price"
+                                                       required>
+                                            </div>
+                                            <div class="mt-3">
+                                                <label for="photo_1">Основное фото</label>
+                                                <input class="form-control"  type="file" name="photo_1" id="photo_1"
+                                                       accept="image/*"
+                                                       required>
+                                            </div>
+                                            <div class="mt-3">
+                                                <label for="photo_2">Первое фото схемы</label>
+                                                <input class="form-control" type="file" name="photo_2"
+                                                       id="photo_2" accept="image/*"
+                                                       required>
+                                            </div>
+                                            <div class="mt-3">
+                                                <label for="photo_3">Второе фото схемы</label>
+                                                <input type="file" class="form-control" name="photo_3"
+                                                       id="photo_3" accept="image/*"
+                                                       required>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <form action="/delete" method="POST">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="pk" value="{{project.id}}">
+                                                <button type="sumbit" class="btn btn-sm btn-danger ">
+                                                    Удалить проект
+                                                </button>
+                                            </form>
+                                            <button type="sumbit" class="btn btn-primary">Сохранить изменения</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
